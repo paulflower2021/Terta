@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terta Wallet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Terta Wallet</h1>
+        <div id="options">
+            <button onclick="showRegister()">Register</button>
+            <button onclick="showLogin()">Login</button>
+        </div>
+        <div id="registration" style="display: none;">
+            <h2>Registration</h2>
+            <input type="text" id="firstName" placeholder="First Name">
+            <input type="text" id="middleName" placeholder="Middle Name">
+            <input type="text" id="lastName" placeholder="Last Name">
+            <input type="text" id="phoneNumber" placeholder="Phone Number">
+            <input type="password" id="password" placeholder="Password">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            <button onclick="register()">Register</button>
+            <button onclick="showLogin()">Login</button>
+        </div>
+        <div id="login" style="display: none;">
+            <h2>Login</h2>
+            <input type="text" id="loginPhoneNumber" placeholder="Phone Number">
+            <input type="password" id="loginPassword" placeholder="Password">
+            <button onclick="login()">Login</button>
+            <button onclick="showRegister()">Register</button>
+        </div>
+        <div id="wallet" style="display: none;">
+            <h2>Welcome, <span id="loggedInUser"></span>!</h2>
+            <div id="balance">Balance: $<span id="userBalance">100</span></div>
+            <input type="number" id="amount" placeholder="Enter amount">
+            <input type="text" id="receiver" placeholder="Enter receiver phone number">
+            <button onclick="sendMoney()">Send Money</button>
+            <button onclick="logout()">Logout</button>
+        </div>
+        <!-- Add a new div to display receiver's details -->
+        <div id="receiverDetails" style="display: none;">
+            <h3>Receiver's Details</h3>
+            <p id="receiverName"></p>
+            <p id="transferAmount"></p>
+            <button onclick="confirmTransfer()">Confirm Transfer</button>
+            <button onclick="cancelTransfer()">Cancel</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
